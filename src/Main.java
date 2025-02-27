@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -16,14 +17,17 @@ public class Main {
             soma += nota;
             quantidadeNotas++;
 
-            System.out.println("Deseja inserir uma outra nota? (Digite 'S' para Sim e 'N' para Não): ");
-            resposta = scanner.nextLine();
+            scanner.nextLine();
 
-        } while(resposta.equalsIgnoreCase("s"));
+            System.out.println("Deseja inserir uma outra nota? (Digite 'S' para Sim e 'N' para Não): ");
+            resposta = scanner.nextLine().toLowerCase();
+
+        } while(resposta.equals("s"));
 
         double media = soma / quantidadeNotas;
 
         System.out.println(("Média das notas: " + media));
 
+        scanner.close();
     }
 }
